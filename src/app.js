@@ -3,6 +3,11 @@ const fs = require("fs").promises;
 
 const app = express();
 
+// Definir endpoint de bienvenida
+app.get("/", (req, res) => {
+    res.json("Bienvenido usuario!!, si quiere ver los productos vaya a /products, si quiere ver por cierto limite vaya a /products/?limit = numero y si quiere ver el producto segun el id, vaya a /products/:pid o numero de id")
+})
+
 // Definir endpoint para obtener productos
 app.get("/products", async (req, res) => {
     try {
