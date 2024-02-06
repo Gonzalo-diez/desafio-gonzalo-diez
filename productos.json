@@ -1,0 +1,47 @@
+[
+  {
+    "id": 3,
+    "title": "Playstaion 5",
+    "description": "playstation 5 con god of war ragnarok",
+    "price": 1350000,
+    "thumbnail": "ps5.jpg",
+    "code": "P001",
+    "stock": 10
+  },
+  {
+    "id": 4,
+    "title": "Nintendo Switch",
+    "description": "nintendo swith con leyend of zelda breath of the wild",
+    "price": 70000,
+    "thumbnail": "switch.jpg",
+    "code": "P080",
+    "stock": 5
+  },
+  {
+    "id": 5,
+    "title": "Xbox series X",
+    "description": "Xbox series X con masterchief collection",
+    "price": 1000000,
+    "thumbnail": "xbox.jpg",
+    "code": "P003",
+    "stock": 10
+  },
+  {
+    "id": 6,
+    "title": "PC gamer",
+    "description": "PC gamer, 32gb RAM, Nvidia 3080 GTX, Intel i9 11th",
+    "price": 2500000,
+    "thumbnail": "pc.jpg",
+    "code": "P008",
+    "stock": 10
+  },
+  {
+    "id": 7,
+    "title": "Playstation 4",
+    "description": "Playstation 4 con the last of us y spider-man",
+    "price": 750000,
+    "thumbnail": "ps4.jpg",
+    "code": "P009",
+    "stock": 10
+  }
+]
