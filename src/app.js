@@ -1,7 +1,8 @@
 import express from "express";
-import fs from "fs/promises";
+import ProductManager from "./productManager.js";
 
 const app = express();
+const productManager = new ProductManager();
 
 // Definir endpoint de bienvenida
 app.get("/", (req, res) => {
@@ -13,16 +14,11 @@ app.get("/", (req, res) => {
     });
 });
 
-
 // Definir endpoint para obtener productos
 app.get("/products", async (req, res) => {
     try {
-        // Leer el archivo productos.json
-        const productsData = await fs.readFile("../productos.json", "utf-8");
-        const products = JSON.parse(productsData);
-
-        // Obtener el parámetro de consulta de límite (si existe)
         const limit = parseInt(req.query.limit);
+        const products = productManager.getProducts(); // Obtener productos del productManager
 
         // Filtrar productos según el límite
         const limitedProducts = limit ? products.slice(0, limit) : products;
@@ -37,17 +33,9 @@ app.get("/products", async (req, res) => {
 // Definir endpoint para obtener un producto por ID
 app.get("/products/:pid", async (req, res) => {
     try {
-        // Leer el archivo productos.json
-        const productsData = await fs.readFile("../productos.json", "utf-8");
-        const products = JSON.parse(productsData);
-
-        // Obtener el ID del producto de los parámetros de ruta
         const productId = parseInt(req.params.pid);
+        const product = productManager.getProductById(productId); // Obtener producto por ID del productManager
 
-        // Buscar el producto por ID
-        const product = products.find(product => product.id === productId);
-
-        // Verificar si se encontró el producto
         if (product) {
             // Enviar la respuesta con el producto encontrado
             res.json(product);

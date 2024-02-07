@@ -1,4 +1,4 @@
-const fs = require('fs');
+import fs from "fs";
 
 class ProductManager {
     constructor(filepath = '../productos.json') {
@@ -130,3 +130,5 @@ try {
 } catch (error) {
     console.error(error.message);
 }
+
+export default ProductManager;
